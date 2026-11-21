@@ -2,7 +2,7 @@
 # Para correrlo: source("Codigo/parteB.R")
 # Usa cohortes y mortalidad de la parte A.
 
-if (!exists("cohortes")) source("Codigo/parteA.R")
+if (!exists("cohortes")) source("Codigo/parteA.R") #para evitar errores al compilar
 
 # Supuesto menores de 30 sin pareja; de 30 o más con una pareja hipotética de sexo opuesto. La edad del cónyuge se fija al inicio y se mantiene la diferencia los 5 años.
 parejas <- cohortes[cohortes$edad >= edad_min_pareja, ]
