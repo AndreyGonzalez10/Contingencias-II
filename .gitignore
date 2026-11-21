@@ -2,3 +2,14 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Archivos auxiliares de LaTeX
+*.aux
+*.log
+*.out
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.synctex.gz
+*.toc
