@@ -1,4 +1,7 @@
 # Proyecto final CA-0309 Contingencia de Vida II — Grupo 2
+Andrey Gonzales (C33329)
+Rndal Picado Bermudez (C36024)
+Anthony Flores Rojas (C32975)
 
 Universidad de Costa Rica, II ciclo 2026. Prof. Yerling Ramírez Morera.
 Rol del grupo: Auditoría o Control (ronda 1).
@@ -50,7 +53,7 @@ de la cuenta y de la simulación). Los escenarios se definen ahí como listas:
 
 ## Reproducibilidad
 
-- Lenguaje: R. Simulación con el generador por defecto de R (Mersenne-Twister),
+- Lenguaje: R. Simulación con el generador por defecto de R,
   semilla 2026, 1 000 trayectorias de cinco años.
 - Las tablas se exportan desde el código; ningún resultado se edita a mano.
 - Fecha de referencia para las edades: 31/12/2025.
