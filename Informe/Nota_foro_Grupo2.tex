@@ -1,5 +1,3 @@
-% Nota de una página para el foro — Grupo 2, Auditoría o Control
-% Compilar con pdfLaTeX (compilador por defecto de Overleaf)
 \documentclass[11pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -14,7 +12,6 @@
 \usepackage{xcolor}
 \usepackage{fancyhdr}
 \pagestyle{fancy}\fancyhf{}
-\fancyhead[R]{\small\itshape Nota para el foro}
 \fancyfoot[C]{\small\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \usepackage{titlesec}
@@ -26,7 +23,7 @@
 \begin{document}
 
 \begin{center}
-{\Large\bfseries Nota para el foro: robustez de la propuesta ante mayor renuncia}\\[3pt]
+{\Large\bfseries Nota para el foro}\\[3pt]
 {\normalsize Proyecto final CA-0309 \,|\, Grupo 2, Auditoría o Control \,|\, Ronda 1}\\[2pt]
 {\small Andrey Gonzales (C33329), Randal Picado Bermúdez (C36024), Anthonny Flores Rojas (C32975)}
 \end{center}
@@ -95,21 +92,21 @@ $\tilde F_t \ge V_t$ en cada cierre, empezando por el año 1.\\
 
 \section*{Preguntas para el foro}
 \begin{enumerate}[label=\arabic*.]
-\item \textbf{Al grupo 1 (Actuarial):} ¿con qué evidencia sostienen la renuncia del 3\,\%, y cómo
-cambiaría su recomendación si las salidas fueran selectivas, es decir, si renunciaran sobre todo
-los asegurados más sanos?
-\item \textbf{Al grupo 7 (Comité de Riesgos):} ¿qué monto de capital está dispuesto a comprometer
-para respaldar la reserva desde el año 1 (al menos 2\,025 millones en la base) y qué indicador
-usaría para decidir si se mantiene el producto?
+\item \textbf{Al grupo 1 (Actuarial):} con la prima de 50\,000, después de gastos y comisión quedan
+37\,500 por contrato, pero el siniestro esperado va de 46\,659 a 57\,392 en los cinco años. Según su
+análisis, ¿qué prima haría falta para que el producto no pierda dinero y cómo la justifican?
+\item \textbf{Al grupo 7 (Comité de Riesgos):} ¿cuánto capital estarían dispuestos a poner para
+cubrir la reserva desde el primer año (al menos 2\,025 millones en la base) y qué cifra mirarían
+para decidir si el producto sigue?
 \end{enumerate}
 
 \section*{Opinión preliminar}
-\noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{\small
-\textbf{Posponer} el seguro colectivo hasta contar con una tarifa que dé NPV no negativo en base y
-adverso y con un plan de capital que respalde la reserva desde el año 1. \textbf{Apoyar} la cuenta
+Posponer el seguro colectivo hasta contar con una tarifa que dé NPV no negativo en base y
+adverso y con un plan de capital que respalde la reserva desde el año 1. Apoyar la cuenta
 equity-linked con $G = 100\,000$ (NPV medio 4\,054.40, frecuencia de pérdida 24.6\,\%, CTE95
-22\,959.79), condicionada a monitorear la cola de pérdidas. \emph{Límites:} las cifras son
-indicadores del ejercicio y no miden solvencia regulatoria; la renuncia no está estimada con datos;
-no se calcularon FCF, RA ni CSM. La opinión se confirma oralmente tras el intercambio.}}
+22\,959.79), siempre que se vigilen las pérdidas más grandes.
+
+\noindent\textit{Límites:} son cifras del ejercicio, no de solvencia regulatoria; el 3\,\% de renuncia no viene
+de datos observados y no calculamos FCF, RA ni CSM. La opinión final se da en el cierre oral.
 
 \end{document}
