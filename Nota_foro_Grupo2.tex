@@ -1,0 +1,115 @@
+% Nota de una página para el foro — Grupo 2, Auditoría o Control
+% Compilar con pdfLaTeX (compilador por defecto de Overleaf)
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage[provide=*,spanish]{babel}
+\usepackage[a4paper,top=1.4cm,bottom=1.5cm,left=1.6cm,right=1.6cm,headheight=13pt,headsep=8pt]{geometry}
+\usepackage{booktabs,array,tabularx}
+\usepackage[labelsep=colon,font=small,skip=3pt]{caption}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.2em}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[R]{\small\itshape Nota para el foro}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries}
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+\setlength{\parskip}{2pt}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Nota para el foro: robustez de la propuesta ante mayor renuncia}\\[3pt]
+{\normalsize Proyecto final CA-0309 \,|\, Grupo 2, Auditoría o Control \,|\, Ronda 1}\\[2pt]
+{\small Andrey Gonzales (C33329), Randal Picado Bermúdez (C36024), Anthonny Flores Rojas (C32975)}
+\end{center}
+
+\section*{Escenario}
+Prima anual de 55\,000 y renuncia anual de decremento único del 6\,\%, con los demás parámetros de
+la base (rendimiento del 5\,\%, gasto de 10\,000, descuento del 4\,\% y el mismo cuadro de reservas
+por contrato). Se recalcularon probabilidades competitivas, población, flujos, reservas totales y
+recursos. El 6\,\% es un estrés académico, no una estimación de la reacción de los afiliados. Se
+compara con nuestro caso base de C; no se combina con el escenario adverso de D y no modifica B ni E.
+
+\section*{Comparación propia}
+\begin{minipage}[t]{0.50\textwidth}
+\vspace{0pt}
+\centering\small
+\begin{tabular}{lrr}
+\toprule
+Indicador & Base & Estrés G2\\
+\midrule
+Activos al cierre del año 5 & 84\,700.19 & 72\,387.73\\
+NPV (millones de u.m.) & $-12\,912.86$ & $-10\,222.77$\\
+Margen sobre primas desc. & $-57.88\,\%$ & $-44.09\,\%$\\
+Total de aportes (millones) & 3\,050.20 & 0.00\\
+$\tilde F_1 - V_1$ (millones) & $-2\,024.61$ & $-1\,307.79$\\
+\bottomrule
+\end{tabular}
+\captionof{table}{Base de C frente al estrés del grupo 2.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\textwidth}
+\vspace{0pt}
+\small
+\textbf{Efecto conjunto.} La cartera termina con 12\,312 activos menos ($-14.5\,\%$). Las primas
+totales suben de 24\,017 a 24\,898 millones y los beneficios bajan de 24\,847 a 22\,983 millones
+(373 fallecimientos cubiertos menos). El NPV mejora y desaparecen los aportes, pero el producto
+sigue perdiendo por contrato: el siniestro esperado (45\,943 a 56\,512) supera la nueva prima neta
+de 42\,250. La mejora viene de cubrir a menos personas, no de un mejor producto. No se atribuyen
+importes a cada cambio por separado.
+\end{minipage}
+
+\section*{Observaciones de Auditoría o Control}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.4cm}X@{}}
+\toprule
+\multicolumn{2}{@{}l}{\normalsize\textbf{1. La tarifa no cubre el siniestro esperado en ningún año}}\\
+\midrule
+Evidencia & La prima neta de gasto y comisión (37\,500 por contrato) queda por debajo del siniestro
+esperado por contrato vigente en los cinco años (46\,659 a 57\,392). NPV base $-12\,912.86$
+millones; la adquisición explica 7\,800.30 millones (60\,\%).\\
+Consecuencia & La pérdida es estructural y crece con la edad de la cartera (edad media de 51.2
+años); persiste en el escenario adverso ($-13\,617.35$) y en nuestro estrés ($-10\,222.77$).\\
+Acción & Recalcular la prima con la mortalidad de esta población y revisar el gasto de adquisición
+antes de aprobar; exigir NPV no negativo en base y adverso.\\
+\midrule
+\multicolumn{2}{@{}l}{\normalsize\textbf{2. Los recursos no respaldan la reserva desde el primer cierre}}\\
+\midrule
+Evidencia & $\tilde F_1 - V_1$ es negativo en los tres escenarios: $-2\,024.61$ (base),
+$-2\,197.78$ (adverso) y $-1\,307.79$ (estrés). Los recursos iniciales son 25\,000 por contrato y la
+reserva del año 1, 40\,000. La base requiere 3\,050.20 millones de aportes.\\
+Consecuencia & Aunque el estrés elimina los aportes, su respaldo sigue negativo del año 1 al 4: la
+falta de respaldo no se corrige con más renuncias.\\
+Acción & Condicionar cualquier aprobación a un plan de capital aprobado que asegure
+$\tilde F_t \ge V_t$ en cada cierre, empezando por el año 1.\\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+\section*{Preguntas para el foro}
+\begin{enumerate}[label=\arabic*.]
+\item \textbf{Al grupo 1 (Actuarial):} ¿con qué evidencia sostienen la renuncia del 3\,\%, y cómo
+cambiaría su recomendación si las salidas fueran selectivas, es decir, si renunciaran sobre todo
+los asegurados más sanos?
+\item \textbf{Al grupo 7 (Comité de Riesgos):} ¿qué monto de capital está dispuesto a comprometer
+para respaldar la reserva desde el año 1 (al menos 2\,025 millones en la base) y qué indicador
+usaría para decidir si se mantiene el producto?
+\end{enumerate}
+
+\section*{Opinión preliminar}
+\noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{\small
+\textbf{Posponer} el seguro colectivo hasta contar con una tarifa que dé NPV no negativo en base y
+adverso y con un plan de capital que respalde la reserva desde el año 1. \textbf{Apoyar} la cuenta
+equity-linked con $G = 100\,000$ (NPV medio 4\,054.40, frecuencia de pérdida 24.6\,\%, CTE95
+22\,959.79), condicionada a monitorear la cola de pérdidas. \emph{Límites:} las cifras son
+indicadores del ejercicio y no miden solvencia regulatoria; la renuncia no está estimada con datos;
+no se calcularon FCF, RA ni CSM. La opinión se confirma oralmente tras el intercambio.}}
+
+\end{document}
