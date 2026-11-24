@@ -36,6 +36,7 @@
 \usepackage{enumitem}
 \usepackage[table]{xcolor}
 \usepackage{booktabs}
+\usepackage{float} % [H] fija la tabla donde se escribe
 \usepackage{fancyhdr}
 \setlength{\headheight}{11pt}
 \pagestyle{fancy}
@@ -239,7 +240,7 @@
 	%---------BLOQUE 5------------------- (C: profit testing)
 	\section{Flujos, reservas suministradas y profit testing}\label{sec:C}
 
-	Con \(N_{t-1}\) activos al inicio y \(D_t\) fallecimientos del año, las primas son \(P_t=CN_{t-1}\), los gastos \(E_t=eN_{t-1}\), las comisiones \(\alpha P_t\), los beneficios \(B_t=bD_t\) y la reserva total \(V_t=v_tN_t\) con el cuadro suministrado. El resultado anual, el NPV y el margen son
+	Con \(N_{t-1}\) activos al inicio y \(D_t\) fallecimientos del año, las primas son \(P_t=CN_{t-1}\), los gastos \(E_t=eN_{t-1}\), las comisiones \(\alpha P_t\), los beneficios \(B_t=bD_t\) y la reserva total \(V_t=v_tN_t\). El cuadro suministrado fija la reserva por contrato vigente al cierre en \(v_1=40\,000\), \(v_2=35\,000\), \(v_3=25\,000\) y \(v_4=15\,000\); además, \(V_0=0\) antes de emisión y \(V_5=0\) por expiración y pago completo de beneficios. La reserva se aplica solo a los \(N_t\) activos al cierre, no a quienes fallecieron o renunciaron. El resultado anual, el NPV y el margen son
 	\begin{equation}\label{eq:profit}
 		\pi_t=\bigl(V_{t-1}+P_t-E_t-\alpha P_t\bigr)(1+i)-B_t-V_t,\qquad
 		\mathrm{NPV}=-kN_0+\sum_{t=1}^{5}\pi_t v^t,\qquad
@@ -263,7 +264,7 @@
 
 	\subsection{Recursos y aportes}
 
-	Se parte de \(F_0=(100\,000-k)N_0=2\,600.10\) millones. Cada año \(\widetilde F_t=(F_{t-1}+P_t-E_t-\alpha P_t)(1+i)-B_t\) y, si es negativo, el aporte al cierre cubre exactamente el déficit (\cref{tab:recursos}). Los recursos se agotan en el año 3 y desde el año 4 el aporte coincide con el resultado efectivo del año. El saldo mínimo antes de aportes es \(-1\,591.75\) (año 5) y los aportes suman 3\,050.20. Al cierre del año 1, \(\widetilde F_1-V_1=1\,972.52-3\,997.13=-2\,024.61\): los recursos no respaldan la reserva desde el primer año.
+	Se parte de \(F_0=(100\,000-k)N_0=2\,600.10\) millones. Cada año \(\widetilde F_t=(F_{t-1}+P_t-E_t-\alpha P_t)(1+i)-B_t\) y, si es negativo, el aporte al cierre cubre exactamente el déficit (\cref{tab:recursos}). Los recursos se agotan en el año 3 y desde el año 4 el aporte coincide con el resultado efectivo del año. El saldo mínimo antes de aportes es \(-1\,591.75\) (año 5) y los aportes suman 3\,050.20. Ese mínimo ya considera los aportes de los años 3 y 4; no es una trayectoria sin financiación. Siguiendo la convención de la guía, la reserva no es una entrada de efectivo, su liberación no es un cobro y los aportes no son utilidad ni entran en el NPV. Al cierre del año 1, \(\widetilde F_1-V_1=1\,972.52-3\,997.13=-2\,024.61\): los recursos no respaldan la reserva desde el primer año.
 
 	\begin{table}[htbp]
 		\centering\small
@@ -291,7 +292,7 @@
 		\end{minipage}
 	\end{table}
 
-	\begin{table}[htbp]
+	\begin{table}[H]
 		\centering\small
 		\tabla{C_brecha_por_contrato}
 		\caption{Siniestro esperado frente a prima neta de gasto y comisión, por contrato vigente al inicio del año, en \um}\label{tab:brecha}
@@ -331,7 +332,7 @@
 	%---------BLOQUE 7------------------- (E: equity-linked)
 	\section{Equity-linked y rentabilidad estocástica}\label{sec:E}
 
-	Se analizó una cuenta representativa de un hombre de 45 años con \(A_0=100\,000\). El cargo \(c=2\,\%\) se cobra al inicio de cada año, antes del rendimiento, y el logrendimiento es normal con media \(m=0.04\) y desviación \(\sigma=0.15\):
+	Se analizó una cuenta representativa de un hombre de 45 años con \(A_0=100\,000\). La cuenta es independiente de la base de activos y de las parejas de B, y no se agrega a la cartera. Se supone independencia entre rendimientos y permanencia. El NPV del proveedor considera solo los cargos menos el complemento: no incluye prima, beneficio por muerte, adquisición ni gastos del seguro colectivo, y el aporte inicial del cliente no es ingreso. Al salir por muerte o renuncia se devuelve el saldo de la cuenta sin complemento, por lo que esa devolución no es un costo del proveedor. El cargo \(c=2\,\%\) se cobra al inicio de cada año, antes del rendimiento, y el logrendimiento es normal con media \(m=0.04\) y desviación \(\sigma=0.15\):
 	\begin{equation}\label{eq:cuenta}
 		\text{Cargo}_t=c\,A_{t-1},\qquad A_t=A_{t-1}(1-c)\,e^{m+\sigma Z_t},\qquad Z_t\sim N(0,1)\ \text{independientes}.
 	\end{equation}
@@ -372,6 +373,8 @@
 	\clearpage
 	\section*{Contribuciones individuales}\label{sec:contribuciones}
 
+	Los tres integrantes participaron en todas las partes del proyecto: programación, revisión cruzada del código y de las cifras, redacción del informe, NIIF 17, nota del foro y presentación. La carga fue equivalente. La tabla indica, para cada integrante, el bloque que coordinó y la verificación que realizó.
+
 	\begin{table}[htbp]
 		\centering\small
 		\renewcommand{\arraystretch}{1.3}
@@ -379,9 +382,9 @@
 			\toprule
 			\textbf{Integrante} & \textbf{Tarea técnica} & \textbf{Bloque de código} & \textbf{Resultado} & \textbf{Verificación} \\
 			\midrule
-			Andrey Gonzales (C33329) & \ph{completar} & \ph{completar} & \ph{completar} & \ph{completar} \\
-			Randal Picado Bermúdez (C36024) & \ph{completar} & \ph{completar} & \ph{completar} & \ph{completar} \\
-			Anthonny Flores Rojas (C32975) & Redacción del informe, sección F de NIIF 17 y nota del foro; revisión de cifras & \texttt{main.R} (ejecución completa) & Informe, NIIF 17 y nota del foro & Se corrió \texttt{main.R} desde cero y las 17 tablas resultaron idénticas a las del informe; las cifras del texto se cotejaron con las tablas y los CSV \\
+			Andrey Gonzales (C33329) & Limpieza de la base, decrementos, matriz de transición y varias vidas (A y B); redacción de A y B y apoyo en C--F & \texttt{00\_parametros.R}, \texttt{parteA.R}, \texttt{parteB.R} & \(N_0=104\,004\), proyección a cinco años, matriz y tres rentas de B & Controles de A (Tabla 4) y de B; revisión cruzada de C y E \\
+			Randal Picado Bermúdez (C36024) & Profit testing, recursos, escenario adverso y escenario del grupo 2 (C, D y sección 4); redacción de C, D y nota del foro y apoyo en A, B y E & \texttt{parteC-D.R} & NPV, margen, recursos, aportes y comparación de escenarios & Resultado igual a efectivo más reservas; suma de la descomposición del NPV; revisión cruzada de A y B \\
+			Anthonny Flores Rojas (C32975) & Equity-linked y NIIF 17 (E y F); redacción de E, F y opinión ejecutiva, presentación y apoyo en A--D & \texttt{parteE.R}, \texttt{main.R} & Simulación, comparación de garantías e integración del informe & Monotonía de garantías y cotejo lognormal analítico; \texttt{main.R} desde cero reproduce las 17 tablas \\
 			\bottomrule
 		\end{tabularx}
 		\caption{Registro de contribuciones por integrante.}\label{tab:contrib}

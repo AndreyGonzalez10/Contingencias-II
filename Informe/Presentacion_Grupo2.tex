@@ -1,0 +1,102 @@
+%====================================================================
+% PRESENTACIÓN PARA EL FORO (MÁXIMO CUATRO DIAPOSITIVAS)
+% CA-0309 Contingencias de Vida II, Grupo 2: Auditoría o Control
+% Compilar con LuaLaTeX, dos veces.
+%====================================================================
+
+% !TEX program = lualatex
+\documentclass[10pt,aspectratio=169]{beamer}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmathfont{NewCMMath-Book}
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\usetheme{default}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{frametitle}{fg=blue!40!black}
+\setbeamercolor{structure}{fg=blue!40!black}
+\setbeamertemplate{footline}{\hfill\scriptsize\itshape Grupo 2, Auditoría o Control \quad \insertframenumber/\inserttotalframenumber\hspace{1em}\vspace{0.6em}}
+
+\newcommand{\tabla}[1]{\input{salidas/tablas/#1.tex}}
+
+\begin{document}
+
+	%--------------------------------------------------------------------
+	\begin{frame}{Escenario del grupo 2: prima de 55\,000 y renuncia del 6\,\%}
+		\vspace{-0.5em}
+		{\scriptsize Andrey Gonzales \,·\, Randal Picado Bermúdez \,·\, Anthonny Flores Rojas \hfill CA-0309, Prof.\ Yerling Ramírez Morera}
+
+		\medskip
+		\begin{center}
+			\scriptsize
+			\tabla{S4_base_grupo2}
+		\end{center}
+
+		\begin{itemize}\small
+			\item El NPV mejora unos 2\,690 millones y no se necesitan aportes, \alert{pero el producto sigue perdiendo} (margen \(-44.09\,\%\)).
+			\item La cartera termina con 12\,312 asegurados menos y unos 373 fallecimientos cubiertos menos.
+			\item El siniestro esperado por contrato (45\,900 a 56\,500) sigue por encima de la prima neta (42\,250).
+		\end{itemize}
+	\end{frame}
+
+	%--------------------------------------------------------------------
+	\begin{frame}{Dos observaciones de control}
+		\begin{columns}[T]
+			\begin{column}{0.48\textwidth}
+				\textbf{1. La prima no cubre el siniestro esperado}
+				\begin{itemize}\small
+					\item \textit{Evidencia:} prima neta 37\,500 frente a un siniestro de 46\,659 a 57\,392 por contrato; NPV base \(-12\,912.86\) millones.
+					\item \textit{Consecuencia:} pierde en base, adverso y estrés.
+					\item \textit{Acción:} re-tarificar y revisar la adquisición (60\,\% de la pérdida).
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.48\textwidth}
+				\textbf{2. Los recursos no respaldan la reserva}
+				\begin{itemize}\small
+					\item \textit{Evidencia:} \(\widetilde F_1-V_1=-2\,024.61\) (base), \(-2\,197.78\) (adverso), \(-1\,307.79\) (grupo 2); aportes de 3\,050.20 en la base.
+					\item \textit{Consecuencia:} depende de capital externo.
+					\item \textit{Acción:} plan de capital o reaseguro antes del lanzamiento.
+				\end{itemize}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	%--------------------------------------------------------------------
+	\begin{frame}{Cuenta equity-linked: \(G=100\,000\) frente a \(G=110\,000\)}
+		\begin{columns}[c]
+			\begin{column}{0.46\textwidth}
+				\resizebox{\linewidth}{!}{\tabla{E_comparacion_garantias}}
+
+				\medskip
+				\small
+				Con cargo y trayectorias iguales, la garantía mayor solo agrega complemento: el NPV medio baja 73\,\% y la cola empeora 30\,\%. Activarse la garantía no implica pérdida.
+			\end{column}
+			\begin{column}{0.52\textwidth}
+				\includegraphics[width=\linewidth]{salidas/figuras/E_histograma_NPV.pdf}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	%--------------------------------------------------------------------
+	\begin{frame}{Preguntas y opinión preliminar}
+		\textbf{Nuestras preguntas}
+		\begin{enumerate}\small
+			\item ¿Qué evidencia sostiene la renuncia del 3\,\% y qué pasa si un alza de prima provoca renuncias de los más sanos?
+			\item ¿Con qué capital se cubre el déficit de \(-2\,024.61\) millones del año 1 y qué prima mínima da NPV no negativo?
+		\end{enumerate}
+
+		\bigskip
+		\begin{block}{Opinión preliminar}
+			\small
+			\textbf{Posponer} el seguro colectivo hasta tener NPV no negativo en base y adverso, un plan de capital para el respaldo y seguimiento de la renuncia.\\
+			\textbf{Apoyar} la cuenta equity-linked con \(G=100\,000\), condicionada a monitorear la cola.\\[0.3em]
+			{\footnotesize\textit{Límites:} supuestos de la guía, reservas suministradas, población cerrada y una muestra de 1\,000 trayectorias.}
+		\end{block}
+	\end{frame}
+
+\end{document}
